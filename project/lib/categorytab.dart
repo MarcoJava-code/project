@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/recipescreen.dart';
 
 class CategoryTab extends StatelessWidget {
 
@@ -10,21 +11,26 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0)
-      ,child: Opacity(
-        opacity: 0.6,
-        child: Container(
-          child: Center(
-            child: Text(this.categoryName,
-              style: TextStyle(
-                color: this.color,
-                fontFamily: "VarFamily",
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => RecipeScreen()));
+      },
+          child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0)
+        ,child: Opacity(
+          opacity: 0.6,
+          child: Container(
+            child: Center(
+              child: Text(this.categoryName,
+                style: TextStyle(
+                  color: this.color,
+                  fontFamily: "VarFamily",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0,
+                ),
               ),
             ),
-          ),
-          height: 130.0, width: 150.0, color: Colors.white)));
+            height: 130.0, width: 150.0, color: Colors.white))),
+    );
   }
 }

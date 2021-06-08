@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/homescreen.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -7,6 +8,24 @@ class LoadingScreen extends StatefulWidget {
 
 
 class _LoadingScreenState extends State<LoadingScreen> {
+
+  void futuraa() async{
+    await Future.delayed(Duration(seconds: 3), () {
+      Navigator.push((this.context), MaterialPageRoute(builder: (context) => HomeScreen()));
+    });
+  }
+
+
+  
+  @override
+  void initState() {
+    super.initState();
+    futuraa();
+
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     
